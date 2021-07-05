@@ -4,8 +4,9 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
-    "dev": "nodemon server/index.js --exec babel-node",
-    "start": "nodemon server/index.js --exec babel-node",
+    "dev": "nodemon src/server/index.js --exec babel-node",
+    "build": "babel -d ./build ./src",
+    "start": "node build/server/index.js",
     "clean": "rimraf dist",
     "preinstall": "npx npm-force-resolutions"
   },
@@ -32,11 +33,14 @@
     "xlsx": "^0.17.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.17",
-    "@babel/core": "^7.12.17",
-    "@babel/node": "^7.12.17",
-    "@babel/preset-env": "^7.12.17",
+    "@babel/core": "7.9.0",
+    "@babel/node": "7.8.7",
+    "@babel/preset-env": "7.9.5",
+    "babel-loader": "8.1.0",
+    "nodemon": "2.0.3",
     "dotenv": "^8.2.0",
-    "nodemon": "^2.0.7"
+    "@babel/cli": "^7.8.4",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/runtime": "^7.9.2"
   }
 }
