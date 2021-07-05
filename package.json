@@ -5,8 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "dev": "nodemon server/index.js --exec babel-node",
-    "build": "babel src -d dist --source-maps",
-    "start": "node dist/index.js",
+    "start": "nodemon server/index.js --exec babel-node",
     "clean": "rimraf dist",
     "preinstall": "npx npm-force-resolutions"
   },
